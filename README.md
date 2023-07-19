@@ -4,7 +4,7 @@ An extremely buggy Rec Room rich presence client I made. It is NOT feature-rich 
 ## Prerequisites
 * This program directly depends on RecNet's matchmaking API, so authorization is needed to utilize it:
   * You MUST have [RecNetLogin's](https://github.com/Jegarde/RecNet-Login) source code in the project files
-  * You MUST follow RecNetLogin's setup instructions.
+  * You MUST follow [RecNetLogin's setup instructions](https://github.com/Jegarde/RecNet-Login#setup).
 
 ## Configuration
 * Double check that the prerequisites are satisfied! If RecNetLogin is not present in your project files then the program will not work AT ALL.
