@@ -3,12 +3,12 @@ An extremely buggy Rec Room rich presence client I made. It is NOT feature-rich 
 
 ## Prerequisites
 * This program directly depends on RecNet's matchmaking API, so authorization is needed to utilize it:
-  * You MUST have [RecNetLogin's](https://github.com/Jegarde/RecNet-Login) source code in the project files
+  * You MUST have [RecNetLogin's](https://github.com/Jegarde/RecNet-Login) source code in the same directory as your download.
   * You MUST follow [RecNetLogin's setup instructions](https://github.com/Jegarde/RecNet-Login#setup).
 
 ## Configuration
-* Double check that the prerequisites are satisfied! If RecNetLogin is not present in your project files then the program will not work AT ALL.
-* This program requires minimal configuration. Upon the first startup of the program, you should be prompted to enter your username. After entering your username, you should not be asked again. You can prompt the program to ask for your username again by deleting the `accountInfo.json` file.
+* Double check that the prerequisites are satisfied! If RecNetLogin is not present in the program's directory, then the program will not work AT ALL.
+* This program requires minimal configuration. Upon the first startup of the program, you should be prompted to enter your username. After entering your username, you should not be asked again. You can prompt the program to ask for your username again by deleting the `accountInfo.json` file, or clearing all contents of it..
 
 
 ## Usage
