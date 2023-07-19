@@ -8,7 +8,7 @@ An extremely buggy Rec Room rich presence client I made. It is NOT feature-rich 
 
 ## Configuration
 * Double check that the prerequisites are satisfied! If RecNetLogin is not present in your project files then the program will not work AT ALL.
-* This program requires minimal configuration. Upon the first startup of the program, you should be prompted to enter your username. After entering your username, you should not be asked again. You can prompt the program to ask for your username again by deleting ALL the contents of `accountInfo.json`.
+* This program requires minimal configuration. Upon the first startup of the program, you should be prompted to enter your username. After entering your username, you should not be asked again. You can prompt the program to ask for your username again by deleting the `accountInfo.json` file.
 
 
 ## Usage
