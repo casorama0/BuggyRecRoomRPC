@@ -1,4 +1,4 @@
-from recnetlogin import RecNetLogin
+from recnetlogin import RecNetLogin # I can not stress this enough! This program will not work if you do not RecNetLogin in the same directory as the program files. MAKE SURE TO PUT THEM IN THE SAME DIRECTORY!!
 from pypresence import Presence
 import json
 import requests
