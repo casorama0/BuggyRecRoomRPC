@@ -61,8 +61,11 @@ class Room:
         self.image = roomImage
 
 while True:
-    mmdata = requests.get(f"https://match.rec.net/player?id={user}", headers={"Authorization": token}).json()[0]
-    instdata = mmdata["roomInstance"]
+    try:
+        mmdata = requests.get(f"https://match.rec.net/player?id={user}", headers={"Authorization": token}).json()[0]
+        instdata = mmdata["roomInstance"]
+    except:
+        raise SystemExit("Failed to gather instance data. Are you logged in to Rec Room?")
 
     mm = Matchmaking(mmdata["isOnline"], instdata["isFull"], instdata["isPrivate"], instdata["name"], instdata["roomId"], instdata["roomInstanceType"], instdata["isInProgress"])
 
@@ -97,8 +100,13 @@ while True:
     else:
         pass
 
-    RPC.update(state=f"Playing {rd.name}{priv}{isprogress}", large_image=f"https://img.rec.net/{rd.image}", start=timeOfChange)
-    print(f"Updated presence. Room: {rd.name}")
+    
+    try:
+        RPC.update(state=f"Playing {rd.name}{priv}{isprogress}", large_image=f"https://img.rec.net/{rd.image}", start=timeOfChange)
+    except:
+        raise SystemExit("Presence update failed. Is Discord still open?")
+    else:
+        print(f"Updated presence. Room: {rd.name}")
 
 
     time.sleep(10)
