@@ -4,6 +4,7 @@ import json
 import requests
 import time
 import math
+import threading
 
 initialized = False
 
@@ -35,7 +36,19 @@ while not initialized:
 
 
 rnl = RecNetLogin()
-token = rnl.get_token(include_bearer = True)
+def generate_token():
+    global token
+    token = None
+    expiry = time.time() + 3600
+    while not token or time.time() > expiry:
+        expiry = time.time()
+        token = rnl.get_token(include_bearer = True)
+        print("Token refreshed")
+
+thread = threading.Thread(target=generate_token)
+thread.start()
+thread.join()
+
 
 
 
@@ -64,10 +77,11 @@ while True:
     try:
         mmdata = requests.get(f"https://match.rec.net/player?id={user}", headers={"Authorization": token}).json()[0]
         instdata = mmdata["roomInstance"]
+        mm = Matchmaking(mmdata["isOnline"], instdata["isFull"], instdata["isPrivate"], instdata["name"], instdata["roomId"], instdata["roomInstanceType"], instdata["isInProgress"])
     except:
         raise SystemExit("Failed to gather instance data. Are you logged in to Rec Room?")
 
-    mm = Matchmaking(mmdata["isOnline"], instdata["isFull"], instdata["isPrivate"], instdata["name"], instdata["roomId"], instdata["roomInstanceType"], instdata["isInProgress"])
+
 
     if mm.isPrivate:
         priv = " [PRIVATE]"
