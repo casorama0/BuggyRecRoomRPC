@@ -5,7 +5,7 @@ An extremely buggy Rec Room rich presence client I made. It is NOT feature-rich 
 * This program directly depends on RecNet's matchmaking API, so authorization is needed to utilize it:
   * You MUST have [RecNetLogin's](https://github.com/Jegarde/RecNet-Login) source code in the same directory as your download; you must have RNL's dependencies installed, as well.
   * You MUST follow [RecNetLogin's setup instructions](https://github.com/Jegarde/RecNet-Login#setup).
-  * PyPresence
+  * Use `pip install -r requirements.txt` to install additional requirements.
 
 ## Configuration
 * Double-check that the prerequisites are satisfied! If RecNetLogin is not present in the program's directory, then the program will not work AT ALL.
