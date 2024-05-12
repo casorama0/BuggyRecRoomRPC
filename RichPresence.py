@@ -36,24 +36,6 @@ while not initialized:
 
 
 rnl = RecNetLogin()
-def generate_token():
-    global token
-    token = None
-    
-    while True:
-        print("Refreshing token")
-        token = rnl.get_token(include_bearer=True)
-        print("Refreshed token successfully!")
-        time.sleep(3599)  
-
-token_thread = threading.Thread(target=generate_token)
-token_thread.daemon = True
-token_thread.start()
-
-
-while not token:
-    pass
-
 
 client_id = "1124780603200508014"
 RPC = Presence(client_id)
@@ -78,6 +60,8 @@ class Room:
         self.image = roomImage
 
 while True:
+    token = rnl.get_token(include_bearer=True)
+    
     try:
         mmdata = requests.get(f"https://match.rec.net/player?id={user}", headers={"Authorization": token}).json()[0]
         instdata = mmdata["roomInstance"]
