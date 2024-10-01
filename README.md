@@ -1,3 +1,7 @@
+# ARCHIVED!!! PLEASE GO TO https://github.com/casorama0/recrpc
+
+
+
 # BuggyRecRoomRPC
 An extremely buggy Rec Room rich presence client I made. It is NOT feature-rich and it only shows the bare minimum amount of information. This is mainly a place for me to store my newbie-level code, so expect minimal maintenance of this.
 
